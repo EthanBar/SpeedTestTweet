@@ -21,15 +21,16 @@ def run():
     down_speed = st.download() / 1000000
     up_speed= st.upload() / 1000000
 
-    if down_speed < 30 or up_speed < 1.5:
+    if down_speed < 50 or up_speed < 3:
         print("Bad speeds, tweeting")
-        message = "@bendbroadband I'm paying for 50down/3up, why is my speed " + str(round(down_speed, 2)) +\
+        message = "@bendbroadband I'm paying for 100down/5up, why is my speed " + str(round(down_speed, 2)) +\
                   "down/" + str(round(up_speed, 2)) + "up?"
         print(message)
         api.PostUpdate(message)
     else:
         print("Normal Speed found, message would be: ")
-        print("@bendbroadband I'm paying for 50down/3up, why is my speed " + str(round(down_speed, 2)) + \
+        print("@bendbroadband I'm paying for 100down/5up"
+              ", why is my speed " + str(round(down_speed, 2)) + \
                   "down/" + str(round(up_speed, 2)) + "up?")
 
 if __name__ == "__main__":
